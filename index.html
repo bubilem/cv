@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Bubílek" />
+    <link rel="manifest" href="img/site.webmanifest" />
+
+    <!-- SEO & Meta -->
+    <meta name="description"
+        content="Interactive Alien/Nostromo themed CV of Michal Bubílek. Software Developer, Teacher, Sci-fi enthusiast.">
+    <meta name="keywords" content="Michal Bubílek, CV, Portfolio, Alien, Nostromo, Developer, Varnsdorf">
+    <meta name="author" content="Michal Bubílek">
+    <meta name="theme-color" content="#050505">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MU/TH/UR 6000 Interface - Michal Bubílek">
+    <meta property="og:description" content="Interactive Alien/Nostromo themed CV.">
+    <meta property="og:image" content="https://www.bubilek.cz/cv/img/mb.webp">
+    <meta property="og:url" content="https://www.bubilek.cz/cv/">
+    <meta property="og:type" content="website">
+
+    <title>MU/TH/UR 6000 Interface - Michal Bubílek</title>
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body>
+
+    <div id="overlay">
+        <div id="start-btn">INITIALIZE SYSTEM</div>
+    </div>
+
+    <!-- Hidden Input for Mobile Keyboard -->
+    <input type="text" id="cmd-input" autocomplete="off"
+        style="opacity: 0; position: absolute; top: -1000px; left: -1000px;">
+
+    <div id="terminal" class="hidden">
+        <header>
+            <div class="header-left">
+                <img src="img/mb.webp" alt="Michal Bubílek" id="profile-pic">
+                <video id="profile-video" class="hidden" muted playsinline loop>
+                    <source src="video/head_720p.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="header-right">
+                <div class="top-controls">
+                    <a href="https://www.bubilek.cz" class="retro-link">[HOME]</a>
+                    <a href="#" data-user="michal" data-domain="bubilek.cz" class="retro-link">[EML]</a>
+                    <button id="mute-btn" class="retro-link">[MUTE]</button>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+                </div>
+                <div id="header-text">NOSTROMO CREW FILE: 78-11-MB</div>
+            </div>
+        </header>
+
+        <div id="console-output"></div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="audio/nostromo.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="typing-sfx" loop>
+        <source src="audio/computer.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js?v=3"></script>
+</body>
+
+</html>

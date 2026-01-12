@@ -1,0 +1,50 @@
+# ----------------------------------------------------------------------
+# | Basic .htaccess for Bubilek CV                                     |
+# ----------------------------------------------------------------------
+
+# Disable directory browsing
+Options -Indexes
+
+# Set default charset to UTF-8
+AddDefaultCharset UTF-8
+
+# ----------------------------------------------------------------------
+# | Custom Error Pages                                                 |
+# ----------------------------------------------------------------------
+
+# Redirect 404 to main page (useful for single page apps/CVs)
+ErrorDocument 404 /cv/index.html
+
+# ----------------------------------------------------------------------
+# | Compression                                                        |
+# ----------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Browser Caching                                                    |
+# ----------------------------------------------------------------------
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML - Do not cache or cache briefly
+    ExpiresByType text/html "access plus 0 seconds"
+
+    # CSS / JS - Cache for a week
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+
+    # Media - Cache for a year (they rarely change)
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType audio/mpeg "access plus 1 year"
+    ExpiresByType video/mp4 "access plus 1 year"
+</IfModule>
