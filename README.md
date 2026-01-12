@@ -1,5 +1,7 @@
 # MU/TH/UR 6000 Interface - Michal Bubílek CV
 
+**Live Version:** [https://www.bubilek.cz/-/cv/](https://www.bubilek.cz/-/cv/)
+
 This project is an interactive personal portfolio/CV styled after the **MU/TH/UR 6000** computer interface from the **Alien** movie franchise (Nostromo).
 
 It features a retro sci-fi terminal design, typing animations, immersive audio, and random system events simulating the atmosphere of the USCSS Nostromo.
